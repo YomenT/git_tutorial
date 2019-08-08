@@ -1,0 +1,44 @@
+if __name__ == '__main__':
+    dictionary = {}
+    list1 = []
+    list2 = []
+    list3 = []
+    list4 = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        dictionary[name] = score
+
+    for x in dictionary.values():
+        list1.append(x)
+
+#    list1.sort()
+#    var_1 = list1[1]
+
+    for y in list1:
+        if y not in list2:
+            list2.append(y)
+
+    var_12 = 1
+    var_11 = list1[1]
+    if var_11 in list2:
+        var_12 = var_12 + 1
+
+    list2.sort()
+    var_2 = list2[1]
+    list1.sort() 
+    var_1 = list1[var_12]
+
+    if var_1 == var_2:
+        for key, value in dictionary.items():
+            if var_1 == value:
+                list4.append(key)
+
+    elif var_2 != var_1:
+        for key, value in dictionary.items():
+            if var_2 == value:
+                print(key.title())
+    
+    list4.sort()  
+    for var_10 in list4:
+        print(var_10.title())
